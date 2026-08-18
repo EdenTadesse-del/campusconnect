@@ -614,7 +614,7 @@ function App() {
         </span>
 
         <span>
-          Built with React + Express
+      By Eden
         </span>
       </footer>
     </div>
