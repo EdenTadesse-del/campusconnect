@@ -1,0 +1,19 @@
+$kind: http-request
+name: Post test
+description: ""
+url: " http://localhost:3000/students"
+method: POST
+body:
+  type: json
+  content: "        {\r
+
+    \            \"name\": \"Abebe Kebede\",\r
+
+    \            \"email\": \"abebe@gmail.com\",\r
+
+    \            \"department\": \"Software Engineering\",\r
+
+    \            \"year\": 3\r
+
+    \        }"
+order: 3344169859257332

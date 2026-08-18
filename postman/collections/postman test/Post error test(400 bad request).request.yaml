@@ -1,0 +1,19 @@
+$kind: http-request
+name: Post error test(400 bad request)
+description: ""
+url: " http://localhost:3000/students"
+method: POST
+body:
+  type: json
+  content: "        {\r
+
+    \            \"name\": \"\",\r
+
+    \            \"email\": \"abebe@gmail.com\",\r
+
+    \            \"department\": \"Software Engineering\",\r
+
+    \            \"year\": 3\r
+
+    \        }"
+order: 4460281591031218

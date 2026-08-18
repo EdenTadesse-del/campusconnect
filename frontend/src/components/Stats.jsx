@@ -11,10 +11,7 @@ function Stats({ students }) {
 
       <div className="stat-card">
 
-        <div className="stat-icon">
-          👥
-        </div>
-
+    
         <div>
           <span>Total Students</span>
           <strong>{students.length}</strong>
@@ -26,7 +23,7 @@ function Stats({ students }) {
       <div className="stat-card">
 
         <div className="stat-icon">
-          🏫
+          
         </div>
 
         <div>
@@ -40,7 +37,7 @@ function Stats({ students }) {
       <div className="stat-card">
 
         <div className="stat-icon">
-          🎯
+          
         </div>
 
         <div>

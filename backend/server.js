@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`
-🚀 CAMPUSCONNECT API IS RUNNING!
+ CAMPUSCONNECT API IS RUNNING!
 
 Server: http://localhost:${PORT}
 Status: RUNNING 

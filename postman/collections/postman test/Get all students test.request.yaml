@@ -1,0 +1,18 @@
+$kind: http-request
+description: ""
+url: " http://localhost:3000/students"
+method: GET
+body:
+  type: json
+  content: "        {\r
+
+    \            \"name\": \"Nox Tadesse\",\r
+
+    \            \"email\": \"novatadesse272@example.com\",\r
+
+    \            \"department\": \"Software Engineering\",\r
+
+    \            \"year\": 3\r
+
+    \        }"
+order: 1787035589440

@@ -1,0 +1,19 @@
+$kind: http-request
+name: Delete test
+description: ""
+url: " http://localhost:3000/students/2"
+method: DELETE
+body:
+  type: json
+  content: "        {\r
+
+    \            \"name\": \"\",\r
+
+    \            \"email\": \"abebe@gmail.com\",\r
+
+    \            \"department\": \"Software Engineering\",\r
+
+    \            \"year\": 3\r
+
+    \        }"
+order: 4472969055048546

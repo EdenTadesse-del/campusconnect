@@ -94,7 +94,7 @@ const updateStudent = (req, res) => {
 
   res.status(200).json({
     success: true,
-    message: "Student updated successfully ✏️",
+    message: "Student updated successfully ",
     data: student
   });
 };
@@ -121,7 +121,7 @@ const deleteStudent = (req, res) => {
 
   res.status(200).json({
     success: true,
-    message: "Student deleted successfully 🗑️",
+    message: "Student deleted successfully ",
     data: deletedStudent[0]
   });
 };
