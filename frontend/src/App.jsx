@@ -66,8 +66,8 @@ function App() {
       setAdding(true);
 
       const response = await axios.post(
-        "http://localhost:3000/students",
-        form
+        "http://127.0.0.1:3000/students"
+        
       );
 
       setStudents([
