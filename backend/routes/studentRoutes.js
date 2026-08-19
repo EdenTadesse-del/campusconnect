@@ -8,16 +8,15 @@ const {
   createStudent,
   updateStudent,
   deleteStudent
-} = require("../controllers/studentController");
+} = require(
+  "../controllers/studentController"
+);
 
-// GET all students
-// POST new student
 router
   .route("/")
   .get(getStudents)
   .post(createStudent);
 
-// GET, PUT, DELETE one student
 router
   .route("/:id")
   .get(getStudentById)

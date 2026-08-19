@@ -1,9 +1,5 @@
 const students = require("../data/students");
 
-// ========================================
-// GET ALL STUDENTS
-// ========================================
-
 const getStudents = (req, res) => {
   res.status(200).json({
     success: true,
@@ -11,10 +7,6 @@ const getStudents = (req, res) => {
     data: students
   });
 };
-
-// ========================================
-// GET STUDENT BY ID
-// ========================================
 
 const getStudentById = (req, res) => {
   const id = Number(req.params.id);
@@ -36,24 +28,52 @@ const getStudentById = (req, res) => {
   });
 };
 
-// ========================================
-// CREATE STUDENT
-// ========================================
-
 const createStudent = (req, res) => {
-  const { name, email, department, year } = req.body;
+  const {
+    name,
+    email,
+    password,
+    department,
+    year
+  } = req.body;
 
-  if (!name || !email || !department || !year) {
+  if (
+    !name ||
+    !email ||
+    !password ||
+    !department ||
+    !year
+  ) {
     return res.status(400).json({
       success: false,
-      message: "Name, email, department and year are required"
+      message: "All fields are required"
+    });
+  }
+
+  const emailExists = students.find(
+    (student) => student.email === email
+  );
+
+  if (emailExists) {
+    return res.status(400).json({
+      success: false,
+      message: "Email already exists"
     });
   }
 
   const newStudent = {
-    id: students.length + 1,
+    id:
+      students.length > 0
+        ? Math.max(
+            ...students.map(
+              (student) => student.id
+            )
+          ) + 1
+        : 1,
+
     name,
     email,
+    password,
     department,
     year: Number(year)
   };
@@ -62,14 +82,10 @@ const createStudent = (req, res) => {
 
   res.status(201).json({
     success: true,
-    message: "Student added successfully 🎉",
+    message: "Student added successfully",
     data: newStudent
   });
 };
-
-// ========================================
-// UPDATE STUDENT
-// ========================================
 
 const updateStudent = (req, res) => {
   const id = Number(req.params.id);
@@ -85,23 +101,31 @@ const updateStudent = (req, res) => {
     });
   }
 
-  const { name, email, department, year } = req.body;
+  const {
+    name,
+    email,
+    password,
+    department,
+    year
+  } = req.body;
 
-  if (name) student.name = name;
-  if (email) student.email = email;
-  if (department) student.department = department;
-  if (year) student.year = Number(year);
+  student.name = name || student.name;
+  student.email = email || student.email;
+  student.password =
+    password || student.password;
+  student.department =
+    department || student.department;
+
+  if (year) {
+    student.year = Number(year);
+  }
 
   res.status(200).json({
     success: true,
-    message: "Student updated successfully ",
+    message: "Student updated successfully",
     data: student
   });
 };
-
-// ========================================
-// DELETE STUDENT
-// ========================================
 
 const deleteStudent = (req, res) => {
   const id = Number(req.params.id);
@@ -117,12 +141,11 @@ const deleteStudent = (req, res) => {
     });
   }
 
-  const deletedStudent = students.splice(studentIndex, 1);
+  students.splice(studentIndex, 1);
 
   res.status(200).json({
     success: true,
-    message: "Student deleted successfully ",
-    data: deletedStudent[0]
+    message: "Student deleted successfully"
   });
 };
 

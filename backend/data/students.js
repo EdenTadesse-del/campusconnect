@@ -1,24 +1,19 @@
 const students = [
   {
     id: 1,
-    name: "Eden Tadesse",
-    email: "edentadesse272@example.com",
-    department: "Software Engineering",
-    year: 1
+    name: "John Student",
+    email: "student@gmail.com",
+    password: "123456",
+    department: "Computer Science",
+    year: 3
   },
   {
     id: 2,
-    name: "Sara Ahmed",
-    email: "saraahmed456@example.com",
-    department: "Computer Science",
+    name: "Sara Student",
+    email: "sara@gmail.com",
+    password: "123456",
+    department: "Software Engineering",
     year: 2
-  },
-  {
-    id: 3,
-    name: "Abel Tesfaye",
-    email: "abeltesfaye832@example.com",
-    department: "Information Technology",
-    year: 3
   }
 ];
 

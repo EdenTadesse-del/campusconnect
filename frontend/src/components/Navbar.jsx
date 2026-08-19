@@ -1,26 +1,17 @@
 function Navbar() {
   return (
-    <header className="navbar">
-
-      <div className="brand">
-
-        <div className="brand-icon">
-          C
-        </div>
-
-        <div>
-          <h1>CampusConnect</h1>
-          <span>Student Management</span>
-        </div>
-
+    <nav className="navbar">
+      <div className="navbar-logo">
+        CampusConnect
       </div>
 
-      <div className="api-status">
-        <span></span>
-        API Connected
+      <div className="navbar-links">
+        <a href="/">Dashboard</a>
+        <a href="/students">Students</a>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
       </div>
-
-    </header>
+    </nav>
   );
 }
 
